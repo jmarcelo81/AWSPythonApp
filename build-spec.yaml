@@ -6,8 +6,8 @@ phases:
     commands:
       - echo Logging in to Amazon ECR...
       - aws --version
-      - $(aws ecr get-login --region ap-south-1 --no-include-email)
-      - REPOSITORY_URI=827575207571.dkr.ecr.ap-south-1.amazonaws.com/boschpythonapp
+      - $(aws ecr get-login --region us-east-1 --no-include-email)
+      - REPOSITORY_URI=837632065693.dkr.ecr.us-east-1.amazonaws.com/pythonapp
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - IMAGE_TAG=${COMMIT_HASH:=latest}
   build:
